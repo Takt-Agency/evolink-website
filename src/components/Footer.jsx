@@ -144,12 +144,10 @@ const Footer = () => {
 
       {/* Main footer */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8">
+        <div className="grid grid-cols-12 gap-8 sm:gap-10 lg:gap-8">
           {/* Brand block */}
-          <div className="lg:col-span-4">
-            <div className="bg-white inline-block rounded-lg p-2.5">
-              <img src={logo} alt="Evolink" className="h-10 w-auto" />
-            </div>
+          <div className="col-span-12 lg:col-span-4">
+            <img src={logo} alt="Evolink" className="h-10 w-auto" />
             <p className="mt-5 text-white/75 text-[15px] leading-relaxed max-w-sm">
               Le partenaire des dirigeants de PME pour optimiser énergie,
               télécom et digital.{" "}
@@ -179,7 +177,7 @@ const Footer = () => {
 
           {/* Link columns */}
           {columns.map((col) => (
-            <div key={col.title} className="lg:col-span-2">
+            <div key={col.title} className="col-span-6 lg:col-span-2">
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-5 relative inline-block">
                 {col.title}
                 <span className="absolute -bottom-1.5 left-0 w-8 h-0.5 bg-accent rounded-full" />
@@ -204,7 +202,7 @@ const Footer = () => {
           ))}
 
           {/* Contact */}
-          <div className="lg:col-span-4">
+          <div className="col-span-12 lg:col-span-4">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-5 relative inline-block">
               Contact
               <span className="absolute -bottom-1.5 left-0 w-8 h-0.5 bg-accent rounded-full" />
