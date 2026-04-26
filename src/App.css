@@ -1,0 +1,10 @@
+/* Custom hero shape clip - diagonal cut on left edge */
+.hero-image-clip {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (max-width: 768px) {
+  .hero-image-clip {
+    clip-path: none;
+  }
+}
