@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   FiMail,
   FiPhone,
@@ -15,6 +14,7 @@ import {
   FiYoutube,
 } from "react-icons/fi";
 import logo from "../assets/logo.png";
+import NavItem from "./NavItem";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -129,12 +129,12 @@ const Footer = () => {
               </div>
               <p className="text-xs text-white/40 leading-relaxed pt-2 text-center sm:text-left">
                 En vous inscrivant, vous acceptez notre{" "}
-                <Link
+                <NavItem
                   to="/politique-confidentialite"
                   className="underline hover:text-accent"
                 >
                   politique de confidentialité
-                </Link>
+                </NavItem>
                 .
               </p>
             </form>
@@ -185,7 +185,7 @@ const Footer = () => {
               <ul className="space-y-3 text-[14px]">
                 {col.links.map((link) => (
                   <li key={link.to}>
-                    <Link
+                    <NavItem
                       to={link.to}
                       className="group inline-flex items-center gap-2 text-white/70 hover:text-accent transition-colors"
                     >
@@ -194,7 +194,7 @@ const Footer = () => {
                         {link.label}
                         <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
                       </span>
-                    </Link>
+                    </NavItem>
                   </li>
                 ))}
               </ul>
@@ -283,26 +283,26 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
-            <Link
+            <NavItem
               to="/mentions-legales"
               className="text-white/70 hover:text-accent transition-colors"
             >
               Mentions légales
-            </Link>
+            </NavItem>
             <span className="text-white/20">·</span>
-            <Link
+            <NavItem
               to="/politique-confidentialite"
               className="text-white/70 hover:text-accent transition-colors"
             >
               Politique de confidentialité
-            </Link>
+            </NavItem>
             <span className="text-white/20">·</span>
-            <Link
+            <NavItem
               to="/cgv"
               className="text-white/70 hover:text-accent transition-colors"
             >
               CGV
-            </Link>
+            </NavItem>
           </div>
         </div>
       </div>

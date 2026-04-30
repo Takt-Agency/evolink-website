@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { FiZap, FiWifi, FiMonitor, FiArrowRight, FiCheck } from "react-icons/fi";
+import NavItem from "./NavItem";
 
 const Services = ({ cta = false }) => {
   const services = [
@@ -123,7 +123,7 @@ const Services = ({ cta = false }) => {
               )}
 
               {/* CTA Button */}
-              <Link
+              <NavItem
                 to={service.to}
                 className={`mt-auto inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded-md transition-all w-full shadow-sm hover:shadow-md group-hover:gap-3 ${
                   service.colorClass === "bg-primary"
@@ -133,20 +133,20 @@ const Services = ({ cta = false }) => {
               >
                 En savoir plus
                 <FiArrowRight className="w-4 h-4" />
-              </Link>
+              </NavItem>
             </article>
           ))}
         </div>
 
         {cta && (
           <div className="mt-10 sm:mt-12 text-center">
-            <Link
+            <NavItem
               to="/services"
               className="inline-flex items-center gap-2 bg-dark hover:bg-dark-deep text-white font-bold text-sm px-7 py-3.5 rounded-md transition-all shadow-md hover:shadow-lg"
             >
               Voir tous nos services
               <FiArrowRight className="w-4 h-4" />
-            </Link>
+            </NavItem>
           </div>
         )}
       </div>

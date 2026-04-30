@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import ImagePlaceholder from "./ImagePlaceholder";
+import NavItem from "./NavItem";
 
 const Mission = ({ cta = false }) => {
   return (
@@ -28,13 +28,13 @@ const Mission = ({ cta = false }) => {
 
                 {cta && (
                   <div className="mt-8">
-                    <Link
+                    <NavItem
                       to="/vision"
                       className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold text-sm px-6 py-3 rounded-md transition-all shadow-lg hover:shadow-xl"
                     >
                       Découvrir notre vision
                       <FiArrowRight className="w-4 h-4" />
-                    </Link>
+                    </NavItem>
                   </div>
                 )}
               </div>

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { FiClock, FiUsers, FiCheckCircle } from "react-icons/fi";
+import NavItem from "./NavItem";
 
 const Hero = () => {
   const stats = [
@@ -44,12 +44,12 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 sm:mt-10">
-              <Link
+              <NavItem
                 to="/rdv"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-semibold text-[15px] px-8 py-4 rounded-md transition-colors shadow-sm w-full sm:w-auto"
               >
                 Prendre RDV
-              </Link>
+              </NavItem>
             </div>
 
             {/* 3 Stats */}

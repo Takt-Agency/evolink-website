@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   FiPhone,
   FiMenu,
@@ -10,6 +10,7 @@ import {
   FiMonitor,
 } from "react-icons/fi";
 import logo from "../assets/logo.png";
+import NavItem from "./NavItem";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,9 +55,9 @@ const Navbar = () => {
     <header className="w-full bg-white sticky top-0 z-50 border-b border-dark/10">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between gap-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center" onClick={closeMobile}>
+        <NavItem to="/" className="flex items-center" onClick={closeMobile}>
           <img src={logo} alt="Evolink" className="h-10 w-auto" />
-        </Link>
+        </NavItem>
 
         {/* Desktop nav links */}
         <ul className="hidden lg:flex items-center gap-8">
@@ -66,7 +67,7 @@ const Navbar = () => {
               (link.dropdown && location.pathname.startsWith(link.to));
             return (
               <li key={link.label} className="relative group">
-                <NavLink
+                <NavItem
                   to={link.to}
                   className={`flex items-center gap-1 text-[15px] font-medium transition-colors hover:text-primary ${
                     isActive ? "text-primary" : "text-dark"
@@ -76,13 +77,13 @@ const Navbar = () => {
                   {link.dropdown && (
                     <FiChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                   )}
-                </NavLink>
+                </NavItem>
 
                 {link.dropdown && (
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-white rounded-xl shadow-xl border border-dark/10 p-3 w-72">
                       {link.dropdown.map((item) => (
-                        <Link
+                        <NavItem
                           key={item.label}
                           to={item.to}
                           className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary-light transition-colors"
@@ -96,7 +97,7 @@ const Navbar = () => {
                               {item.desc}
                             </div>
                           </div>
-                        </Link>
+                        </NavItem>
                       ))}
                     </div>
                   </div>
@@ -120,12 +121,12 @@ const Navbar = () => {
               06 10 54 18 72
             </a>
           </div>
-          <Link
+          <NavItem
             to="/rdv"
             className="bg-accent hover:bg-accent-dark text-white font-semibold text-[15px] px-6 py-3 rounded-md transition-colors shadow-sm"
           >
             Prendre RDV
-          </Link>
+          </NavItem>
         </div>
 
         {/* Mobile menu toggle */}
@@ -134,7 +135,11 @@ const Navbar = () => {
           className="lg:hidden text-dark p-2"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <FiX className="w-6 h-6" />
+          ) : (
+            <FiMenu className="w-6 h-6" />
+          )}
         </button>
       </nav>
 
@@ -160,37 +165,37 @@ const Navbar = () => {
                     {mobileServicesOpen && (
                       <ul className="mt-3 ml-2 flex flex-col gap-3 border-l-2 border-primary-light pl-4">
                         <li>
-                          <Link
+                          <NavItem
                             to={link.to}
                             onClick={closeMobile}
                             className="flex items-center gap-2 text-sm font-semibold text-primary"
                           >
                             Tous les services
-                          </Link>
+                          </NavItem>
                         </li>
                         {link.dropdown.map((item) => (
                           <li key={item.label}>
-                            <Link
+                            <NavItem
                               to={item.to}
                               onClick={closeMobile}
                               className="flex items-center gap-2 text-sm text-dark hover:text-primary"
                             >
                               {item.icon}
                               {item.label}
-                            </Link>
+                            </NavItem>
                           </li>
                         ))}
                       </ul>
                     )}
                   </div>
                 ) : (
-                  <Link
+                  <NavItem
                     to={link.to}
                     onClick={closeMobile}
                     className="flex items-center justify-between text-[15px] font-medium text-dark"
                   >
                     {link.label}
-                  </Link>
+                  </NavItem>
                 )}
               </li>
             ))}
@@ -202,13 +207,13 @@ const Navbar = () => {
                 <FiPhone className="w-4 h-4 text-primary" />
                 06 10 54 18 72
               </a>
-              <Link
+              <NavItem
                 to="/rdv"
                 onClick={closeMobile}
                 className="block text-center bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md"
               >
                 Prendre RDV
-              </Link>
+              </NavItem>
             </li>
           </ul>
         </div>
